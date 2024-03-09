@@ -1,5 +1,6 @@
 from random import randint
 from typing import List, Any
+from PIL import Image, ImageDraw, ImageOps, ImageEnhance
 
 
 def get_uniq_random_int(length: int, max_value: int) -> List[int]:
@@ -69,3 +70,17 @@ def get_students_and_languages():
         "Максим Лебедев": ["русский", "английский", "испанский"],
         "Екатерина Козлова": ["русский", "английский"],
     }
+
+
+def add_watermark_to_image(image: Image.Image):
+    """Добавить водяной знак на картинку"""
+    try:
+        with Image.open("boo.png") as watermark:
+            resized_watermark = watermark.resize(
+                size=(int(image.width / 5), int(image.height / 5))
+            )
+            resized_watermark = resized_watermark.convert("RGBA")
+            result = image.paste(resized_watermark)
+            return result
+    except OSError:
+        print("[ОШИБКА] Проблемы с изображением.")
