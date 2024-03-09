@@ -1,5 +1,5 @@
 import random
-from helpers import get_uniq_random_int, get_occurence_count
+from utils import get_uniq_random_int, get_occurence_count
 
 
 def lab_5_1():
