@@ -1,7 +1,7 @@
 import re
 
 
-def lab_4_1(a: int) -> bool:
+def lab_4_1(a: int):
     """Делится ли число на 3 без остатка"""
     print(a != 0 and a % 3 == 0)
 
