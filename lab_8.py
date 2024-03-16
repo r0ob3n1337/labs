@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 def lab_8_1():
     """Кроп. Обрезка части картинки"""
     try:
-        with Image.open("./lab_8/test-image.png") as source:
+        with Image.open("./lab_8/test_image.png") as source:
             text_crop_box = (0, 0, 700, 272)
             crop_text = source.crop(text_crop_box)
 
@@ -52,7 +52,7 @@ def lab_8_3():
     try:
         name = input("Кого поздравляем (введите имя): ")
 
-        with Image.open("./lab_8/test-image.png") as source:
+        with Image.open("./lab_8/test_image.png") as source:
             txt = Image.new("RGBA", source.size, (255, 255, 255, 0))
             draw = ImageDraw.Draw(txt)
             fnt = ImageFont.truetype("arial.ttf", 60, encoding="UTF-8")

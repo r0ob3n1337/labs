@@ -4,7 +4,7 @@ from PIL import Image, ImageFilter
 from utils import add_watermark_to_image
 
 
-TEST_IMAGE_NAME = "./lab_7/test-image.jpg"
+TEST_IMAGE_NAME = "./lab_7/test_image.jpg"
 
 
 def lab_7_1():
