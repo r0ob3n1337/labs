@@ -47,10 +47,12 @@ def lab_9_1():
 
 def lab_9_3():
     """Вывести содержимое CSV файла. Подсчитать итоговую стоимость."""
+    csv_path = os.path.join(os.getcwd(), "lab_9", "lab_9_3_mock.csv")
+
     try:
         total_price = 0
 
-        with open("lab_9_3_mock.csv", encoding="UTF-8") as f:
+        with open(csv_path, "r", encoding="UTF-8") as f:
             reader = csv.reader(f)
             next(reader)
 
