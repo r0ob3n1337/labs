@@ -3,6 +3,9 @@
 import tkinter as tk
 from classes import IceCreamStand
 
+from components.AddItemButton import AddItemButton
+from components.RemoveItemButton import RemoveItemButton
+
 
 def lab_12_1():
     """Создать экземпляр магазинчика мороженого и вывести список видов мороженого"""
@@ -71,10 +74,10 @@ def lab_12_2():
         flavors_list.insert(i, fl)
     flavors_list.pack(side="top")
 
-    add_btn = tk.Button(flavors_frame, text="+", bg="#55FF55", borderwidth=0)
+    add_btn = AddItemButton(parent=flavors_frame, root=app, add_to=flavors_list)
     add_btn.pack(side="left", fill="x", expand=True)
 
-    remove_btn = tk.Button(flavors_frame, text="-", bg="#FF5555", borderwidth=0)
+    remove_btn = RemoveItemButton(flavors_frame, flavors_list)
     remove_btn.pack(side="right", fill="x", expand=True)
 
     app.mainloop()
