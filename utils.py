@@ -1,6 +1,13 @@
 from random import randint
 from typing import List, Any
 from PIL import Image
+import requests
+from classes.weather_response import WeatherResponse
+
+BASE_WEATHER_URL = "http://api.weatherapi.com/v1/current.json"
+KEY = "dcf137596441437d9cf171105240604"
+AIR_QUALITY = "no"
+LANG = "ru"
 
 
 def get_uniq_random_int(length: int, max_value: int) -> List[int]:
@@ -84,3 +91,19 @@ def add_watermark_to_image(image: Image.Image):
             return result
     except OSError:
         print("[ОШИБКА] Проблемы с изображением.")
+
+
+def get_weather_by_city(city: str):
+    payload = {
+        "key": KEY,
+        "aiq": AIR_QUALITY,
+        "q": city or "Saint Petersburg",
+        "lang": LANG,
+    }
+
+    r = requests.get(BASE_WEATHER_URL, params=payload, timeout=10)
+    r.encoding = "utf-8"
+    response_json = WeatherResponse(**r.json())
+    location = response_json.location
+    current = response_json.current
+    return (location, current)

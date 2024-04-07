@@ -1,7 +1,7 @@
 """Продолжение ООП"""
 
 import tkinter as tk
-from classes import IceCreamStand
+from classes.restaurant import IceCreamStand
 
 from components.AddItemButton import AddItemButton
 from components.RemoveItemButton import RemoveItemButton
