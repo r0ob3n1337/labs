@@ -2,3 +2,4 @@
 pip
 cache
 venv
+__pycache__
