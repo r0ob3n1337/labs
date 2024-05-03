@@ -273,7 +273,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"10K CALC", None))
-        self.lbl_result.setText(QCoreApplication.translate("MainWindow", u"12.22 + 22.22 =", None))
+        self.lbl_result.setText(QCoreApplication.translate("MainWindow", u"", None))
         self.input.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.btn_c.setText(QCoreApplication.translate("MainWindow", u"C", None))
 #if QT_CONFIG(shortcut)
