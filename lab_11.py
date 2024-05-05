@@ -1,6 +1,6 @@
 """ООП"""
 
-from classes import Restaurant
+from classes.restaurant import Restaurant
 
 
 def lab_11_1():

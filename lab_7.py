@@ -1,10 +1,12 @@
 """Обработка изображений"""
 
+import os
+
 from PIL import Image, ImageFilter
 from utils import add_watermark_to_image
 
 
-TEST_IMAGE_NAME = "./lab_7/test_image.jpg"
+TEST_IMAGE_NAME = os.path.join(os.getcwd(), "lab_7", "test_image.jpg")
 
 
 def lab_7_1():

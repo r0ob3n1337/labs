@@ -91,7 +91,7 @@ def lab_10_3():
 
         with open(ru_en_path, "w+", encoding="utf-8") as f:
             for ru_w, eng_w in sorted(ru_dict.items()):
-                f.write(f"{ru_w} - {", ".join(eng_w)}\n")
+                f.write(f"{ru_w} - {', '.join(eng_w)}\n")
 
     except OSError:
         print("[ОШИБКА] Проблемы с файлом.")
